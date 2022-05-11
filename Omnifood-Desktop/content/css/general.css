@@ -24,7 +24,9 @@ Space - SYSTEM (px)
 -Primary: #e67e22
 - Tints: #fdf2e9
 #fae5d3
+#eb984e
 - Shades: #cf711f
+#45260a
 - Accents
 - Greys
 
@@ -32,6 +34,8 @@ Space - SYSTEM (px)
 #555
 
 --- 05 SHADOWS
+
+0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
 
 --- 06 BORDER-RADIUS
 --- Default: 9px
@@ -82,7 +86,7 @@ body {
   margin-bottom: 0;
 } */
 
-.grid:not(:last-child){
+.grid:not(:last-child) {
   margin-bottom: 9.6rem;
 }
 .grid--2-cols {
@@ -140,6 +144,7 @@ body {
   margin-bottom: 3.2rem;
 }
 
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
@@ -148,6 +153,11 @@ body {
   border-radius: 9px;
   text-decoration: none;
   font-weight: 600;
+
+  /* Only necessary for .btn  */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
   /* Put transition on original state */
   /* transition: background-color 0.3s; */
   transition: all 0.3s;
@@ -180,6 +190,17 @@ body {
   box-shadow: inset 0 0 0 3px #fff;
 }
 
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+}
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
+}
+
 .link:link,
 .link:visited {
   display: inline-block;
@@ -194,7 +215,6 @@ body {
 .link:active {
   color: #cf711f;
   border-bottom: 1px solid transparent;
-
 }
 
 .list {
@@ -216,6 +236,13 @@ body {
   color: #e67e22;
 }
 
+*:focus{
+  outline: none;
+  /* outline: 4px dotted #e67e22; */
+  /* outline-offset: 8px; */
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+}
+
 /* HELPER/SETTING CLASSES */
 
 .margin-right-sm {
@@ -226,7 +253,7 @@ body {
   margin-bottom: 4.8rem !important;
 }
 
-.center-text{
+.center-text {
   text-align: center;
 }
 
