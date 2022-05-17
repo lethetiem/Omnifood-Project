@@ -102,6 +102,9 @@ body {
   /* margin-bottom: 9.6rem; */
 }
 
+.grid--5-cols{
+  grid-template-columns: repeat(5, 1fr);
+}
 .grid--center-v {
   align-items: center;
 }
