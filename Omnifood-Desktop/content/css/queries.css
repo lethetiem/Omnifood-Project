@@ -1,8 +1,6 @@
-/* rem and em do NOT depend on html front-size in media queries! Instead, 1rem = 1em = 16px */
-
-/* ********************* */
-/* BELOW 1344px (Smaller Desktop) */
-/* ********************* */
+/**************************/
+/* BELOW 1344px (Smaller desktops) */
+/**************************/
 
 @media (max-width: 84em) {
   .hero {
@@ -18,12 +16,13 @@
   }
 }
 
-/* ********************* */
+/**************************/
 /* BELOW 1200px (Landscape Tablets) */
-/* ********************* */
+/**************************/
 
 @media (max-width: 75em) {
   html {
+    /* 9px / 16px  */
     font-size: 56.25%;
   }
 
@@ -32,7 +31,7 @@
     row-gap: 6.4rem;
   }
 
-  .heading-primary {
+  .heading-secondary {
     font-size: 3.6rem;
   }
 
@@ -57,12 +56,13 @@
   }
 }
 
-/* ********************* */
-/* BELOW 944px (Landscape Tablets) */
-/* ********************* */
+/**************************/
+/* BELOW 944px (Tablets) */
+/**************************/
 
-@media (max-width: 54em) {
+@media (max-width: 59em) {
   html {
+    /* 8px / 16px = 0.5 = 50% */
     font-size: 50%;
   }
 
@@ -72,13 +72,13 @@
     gap: 6.4rem;
   }
 
-  .hero-img {
-    width: 60%;
-  }
-
   .hero-text-box,
   .hero-img-box {
     text-align: center;
+  }
+
+  .hero-img {
+    width: 60%;
   }
 
   .delivered-meals {
@@ -107,6 +107,7 @@
   }
 
   .cta {
+    /* 3/5 = 60% + 2/5 = 40% */
     grid-template-columns: 3fr 2fr;
   }
 
@@ -124,7 +125,7 @@
   }
 
   .main-nav {
-    background-color: rgba(255, 255, 255, 0.971);
+    background-color: rgba(255, 255, 255, 0.97);
     position: absolute;
     top: 0;
     left: 0;
@@ -133,21 +134,25 @@
     transform: translateX(100%);
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     transition: all 0.5s ease-in;
 
+    /* Hide navigation */
+    /* Allows NO transitions at all */
     /* display: none; */
 
+    /* 1) Hide it visually */
     opacity: 0;
 
+    /* 2) Make it unaccessible to mouse and keyboard */
     pointer-events: none;
 
+    /* 3) Hide it from screen readers */
     visibility: hidden;
   }
 
-  .nav-open,
-  .main-nav {
+  .nav-open .main-nav {
     opacity: 1;
     pointer-events: auto;
     visibility: visible;
@@ -173,9 +178,9 @@
   }
 }
 
-/* ********************* */
-/* BELOW 704px (Smaller Tablets) */
-/* ********************* */
+/**************************/
+/* BELOW 704px (Smaller tablets) */
+/**************************/
 
 @media (max-width: 44em) {
   .grid--3-cols,
@@ -184,8 +189,8 @@
   }
 
   .diets {
-    grid-column: 1/-1;
-    justify-items: center;
+    grid-column: 1 / -1;
+    justify-self: center;
   }
 
   .heading-secondary {
@@ -208,12 +213,14 @@
   .nav-col {
     grid-row: 1;
     grid-column: span 2;
+    margin-bottom: 3.2rem;
   }
 }
 
-/* ********************* */
+/**************************/
 /* BELOW 544px (Phones) */
-/* ********************* */
+/**************************/
+
 @media (max-width: 34em) {
   .grid {
     row-gap: 4.8rem;
@@ -247,37 +254,45 @@
     height: 1.2rem;
   }
 
-  .step-img-box:nth-child(2){
+  .step-img-box:nth-child(2) {
     grid-row: 1;
   }
 
-  .step-img-box:nth-child(6){
+  .step-img-box:nth-child(6) {
     grid-row: 5;
   }
 
-  .step-img-box{
+  .step-img-box {
     transform: translateY(2.4rem);
   }
 
-  .testimonials{
+  .testimonials {
     grid-template-columns: 1fr;
   }
 
-  .gallery{
+  .gallery {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.2rem;
   }
 
-  .cta{
+  .cta {
     grid-template-columns: 1fr;
   }
 
-  .cta-text-box{
+  .cta-text-box {
     padding: 3.2rem;
   }
 
-  .cta-img-box{
-    height: 36rem;
+  .cta-img-box {
+    height: 32rem;
     grid-row: 1;
   }
 }
+
+/* 
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
